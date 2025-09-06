@@ -181,3 +181,59 @@ button:focus-visible {
     border: 1px solid #000;
   }
 }
+
+/* Mobile Responsiveness for Authentication */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 10px;
+    min-height: 100vh;
+  }
+  
+  .login-card, .register-card {
+    width: 95%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 10px auto;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .auth-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .switch-mode {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card, .register-card {
+    width: 98%;
+    padding: 15px;
+  }
+  
+  .auth-title {
+    font-size: 1.3rem;
+  }
+  
+  .auth-input, .auth-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
