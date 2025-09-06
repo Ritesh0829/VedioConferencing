@@ -60,6 +60,7 @@ export const AuthProvider = ({ children }) => {
 
             if (request.status === httpStatus.OK) {
                 localStorage.setItem("token", request.data.token);
+                console.log("Login successful, redirecting to /home");
                 router("/home")
             }
         } catch (err) {
