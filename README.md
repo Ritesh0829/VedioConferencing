@@ -32,22 +32,46 @@ A full-stack real-time video conferencing web application built with React, Node
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React 18** - Modern UI library
-- **Material-UI (MUI)** - UI component library
-- **Socket.io Client** - Real-time communication
-- **React Router** - Navigation
-- **WebRTC** - Peer-to-peer communication
-- **Axios** - HTTP client
+### 🎨 Frontend Technologies
+| Technology | Version | Purpose | 
+|------------|---------|---------|
+| **React** | 18.x | Modern UI library with hooks |
+| **Material-UI (MUI)** | 5.x | Professional UI components |
+| **Socket.io Client** | 4.x | Real-time bidirectional communication |
+| **React Router** | 6.x | Client-side routing and navigation |
+| **WebRTC** | Native | Peer-to-peer video/audio communication |
+| **Axios** | 1.x | HTTP client for API requests |
+| **JavaScript ES6+** | - | Modern JavaScript features |
 
-### Backend
-- **Node.js** - Server runtime
-- **Express.js** - Web framework
-- **Socket.io** - Real-time bidirectional communication
-- **MongoDB** - Database (MongoDB Atlas)
-- **Mongoose** - MongoDB object modeling
-- **bcrypt** - Password hashing
-- **CORS** - Cross-origin resource sharing
+### ⚙️ Backend Technologies
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Node.js** | 18.x | JavaScript runtime environment |
+| **Express.js** | 4.x | Fast, minimal web framework |
+| **Socket.io** | 4.x | Real-time communication server |
+| **MongoDB** | 6.x | NoSQL database (MongoDB Atlas) |
+| **Mongoose** | 7.x | MongoDB object modeling |
+| **bcrypt** | 5.x | Password hashing and security |
+| **http-status** | 1.x | HTTP status code constants |
+| **CORS** | 2.x | Cross-origin resource sharing |
+| **dotenv** | 16.x | Environment variable management |
+
+### 🔧 Development Tools
+| Tool | Purpose |
+|------|---------|
+| **nodemon** | Backend development server with hot reload |
+| **npm/yarn** | Package management |
+| **Git** | Version control |
+| **VS Code** | Development environment |
+| **Chrome DevTools** | Debugging and testing |
+
+### ☁️ Deployment & Services
+| Service | Purpose |
+|---------|---------|
+| **MongoDB Atlas** | Cloud database hosting |
+| **Render/Vercel** | Application hosting |
+| **GitHub** | Code repository and CI/CD |
+| **WebRTC** | Direct peer-to-peer communication |
 
 ## 📋 Prerequisites
 
@@ -92,39 +116,119 @@ let IS_PROD = false; // Set to false for local development
 
 ```
 Vedio_Conferencing/
-├── backend/
-│   ├── src/
-│   │   ├── app.js                 # Main server file
-│   │   ├── initializeDb.js        # Database initialization
-│   │   ├── controllers/
-│   │   │   ├── socketManager.js   # Socket.io event handling
-│   │   │   └── user.controller.js # User management
-│   │   ├── models/
-│   │   │   ├── meeting.model.js   # Meeting data model
-│   │   │   └── user.model.js      # User data model
-│   │   └── routes/
-│   │       └── users.routes.js    # User API routes
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── App.js                 # Main React component
-│   │   ├── environment.js         # Environment configuration
-│   │   ├── contexts/
-│   │   │   └── AuthContext.jsx    # Authentication context
-│   │   ├── pages/
-│   │   │   ├── authentication.jsx # Login/Register page
-│   │   │   ├── history.jsx        # Meeting history
-│   │   │   ├── home.jsx           # Dashboard
-│   │   │   ├── landing.jsx        # Landing page
-│   │   │   └── VideoMeet.jsx      # Video meeting interface
-│   │   ├── styles/
-│   │   │   └── videoComponent.module.css
-│   │   └── utils/
-│   │       └── withAuth.jsx       # Authentication HOC
-│   ├── public/
-│   └── package.json
-└── README.md
+├── 📁 backend/                          # Backend server
+│   ├── 📁 src/
+│   │   ├── 📄 app.js                    # Main Express server setup
+│   │   ├── 📄 initializeDb.js           # Database initialization
+│   │   ├── 📁 controllers/
+│   │   │   ├── 📄 socketManager.js      # Socket.IO event handling & WebRTC signaling
+│   │   │   └── 📄 user.controller.js    # User authentication & management
+│   │   ├── 📁 models/
+│   │   │   ├── 📄 meeting.model.js      # Meeting data schema
+│   │   │   └── 📄 user.model.js         # User data schema
+│   │   └── 📁 routes/
+│   │       └── 📄 users.routes.js       # User API endpoints
+│   ├── 📄 .env                          # Environment variables (local)
+│   ├── 📄 .env.example                  # Environment template
+│   ├── 📄 .gitignore                    # Git ignore rules
+│   ├── 📄 package.json                  # Backend dependencies
+│   └── 📄 package-lock.json             # Dependency lock file
+│
+├── 📁 frontend/                         # React frontend application
+│   ├── 📁 public/
+│   │   ├── 📄 index.html                # Main HTML template
+│   │   ├── 📄 documentation.html        # Project documentation page
+│   │   ├── 📄 _redirects                # Routing configuration for deployment
+│   │   ├── 🖼️ background.png            # Landing page background
+│   │   ├── 🖼️ logo192.png              # App logo (192x192)
+│   │   ├── 🖼️ logo512.png              # App logo (512x512)
+│   │   ├── 🖼️ logo3.png                # Additional logo variant
+│   │   ├── 🖼️ mobile.png               # Mobile app icon
+│   │   ├── 📄 manifest.json             # PWA manifest
+│   │   ├── 📄 robots.txt                # SEO robots file
+│   │   └── 🖼️ favicon.ico              # Browser tab icon
+│   ├── 📁 src/
+│   │   ├── 📄 App.js                    # Main React component
+│   │   ├── 📄 App.css                   # Global application styles
+│   │   ├── 📄 index.js                  # React DOM render entry point
+│   │   ├── 📄 index.css                 # Global CSS styles
+│   │   ├── 📄 environment.js            # Environment configuration & API URLs
+│   │   ├── 📁 contexts/
+│   │   │   ├── 📄 AuthContext.jsx       # Authentication state management
+│   │   │   └── 📄 backend.code-workspace # VS Code workspace config
+│   │   ├── 📁 pages/
+│   │   │   ├── 📄 authentication.jsx    # Login/Register page
+│   │   │   ├── 📄 auth.css              # Authentication page styles
+│   │   │   ├── 📄 history.jsx           # Meeting history page
+│   │   │   ├── 📄 home.jsx              # User dashboard/home page
+│   │   │   ├── 📄 landing.jsx           # Landing page with hero section
+│   │   │   ├── 📄 VideoMeet.jsx         # Main video meeting interface
+│   │   │   └── 📄 VideoMeet_new.jsx     # Alternative video meeting component
+│   │   ├── 📁 styles/
+│   │   │   └── 📄 videoComponent.module.css # Video component specific styles
+│   │   ├── 📁 utils/
+│   │   │   └── 📄 withAuth.jsx          # Higher-order component for authentication
+│   │   ├── 📄 logo.svg                  # React logo
+│   │   ├── 📄 reportWebVitals.js        # Performance monitoring
+│   │   ├── 📄 setupTests.js             # Test configuration
+│   │   └── 📄 App.test.js               # App component tests
+│   ├── 📄 .gitignore                    # Frontend Git ignore rules
+│   ├── 📄 README.md                     # Frontend specific documentation
+│   ├── 📄 package.json                  # Frontend dependencies & scripts
+│   └── 📄 package-lock.json             # Frontend dependency lock file
+│
+├── 📄 .gitignore                        # Root level Git ignore
+├── 📄 README.md                         # Main project documentation (this file)
+├── 📄 FLOATING_VIDEO_FEATURE.md         # Floating video feature documentation
+└── 📄 SCREEN_SHARING_FEATURES.md        # Screen sharing feature documentation
 ```
+
+### 🏗️ Architecture Overview
+
+#### **Frontend Architecture (React)**
+```
+┌─────────────────────┐
+│   Landing Page      │ ← Entry point with hero section
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│  Authentication     │ ← Login/Register with form validation
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│   Home Dashboard    │ ← Meeting controls & history
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│  Video Meeting      │ ← WebRTC video calls with chat
+└─────────────────────┘
+```
+
+#### **Backend Architecture (Node.js + Express)**
+```
+┌─────────────────────┐
+│    Express App      │ ← HTTP server setup
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│   Socket.IO        │ ← Real-time communication
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│    Controllers      │ ← Business logic
+└─────────┬───────────┘
+          │
+┌─────────▼───────────┐
+│   MongoDB Models    │ ← Data persistence
+└─────────────────────┘
+```
+
+### 🔄 Data Flow
+
+1. **User Authentication**: Frontend → Backend API → MongoDB
+2. **Video Signaling**: Frontend ↔ Socket.IO ↔ Backend ↔ Other Clients
+3. **Chat Messages**: Frontend → Socket.IO → All Connected Clients
+4. **WebRTC Connection**: Direct P2P between browser clients
 
 ## 🎯 How to Use
 
@@ -147,32 +251,156 @@ Vedio_Conferencing/
 - **Chat**: Click the chat icon to open messaging
 - **End Call**: Click the red phone icon
 
-## 🔧 API Endpoints
+## 🔧 API Endpoints & Socket Events
 
-### User Management
-- `POST /api/v1/users/register` - User registration
-- `POST /api/v1/users/login` - User login
-- `GET /api/v1/users/profile` - Get user profile
+### 🌐 REST API Endpoints (Backend: `http://localhost:8000`)
 
-### Socket Events
-- `join-call` - Join a video call
-- `signal` - WebRTC signaling
-- `chat-message` - Send chat message
-- `user-left` - User leaves the call
+#### **User Authentication**
+| Method | Endpoint | Description | Request Body |
+|--------|----------|-------------|--------------|
+| `POST` | `/api/v1/users/register` | User registration | `{ name, username, password }` |
+| `POST` | `/api/v1/users/login` | User login | `{ username, password }` |
+| `GET` | `/api/v1/users/get_all_activity` | Get user meeting history | `?token=<user_token>` |
+| `POST` | `/api/v1/users/add_to_activity` | Add meeting to history | `{ token, meeting_code }` |
+
+#### **Response Format**
+```json
+{
+  "success": true,
+  "message": "Operation successful",
+  "data": { ... },
+  "token": "<jwt_token>" // for login
+}
+```
+
+### ⚡ Socket.IO Events (Real-time Communication)
+
+#### **Connection Events**
+| Event | Direction | Description | Payload |
+|-------|-----------|-------------|---------|
+| `connection` | Client → Server | User connects to socket | N/A |
+| `disconnect` | Client → Server | User disconnects | N/A |
+
+#### **Video Call Events**
+| Event | Direction | Description | Payload |
+|-------|-----------|-------------|---------|
+| `join-call` | Client → Server | Join a video meeting | `{ meetingId, userInfo }` |
+| `user-joined` | Server → Clients | Notify new user joined | `{ userId, userInfo }` |
+| `signal` | Client ↔ Server | WebRTC signaling data | `{ signal, to, from, type }` |
+| `user-left` | Server → Clients | User left the meeting | `{ userId }` |
+| `call-ended` | Server → Clients | Meeting ended | `{ meetingId }` |
+
+#### **Chat Events**
+| Event | Direction | Description | Payload |
+|-------|-----------|-------------|---------|
+| `chat-message` | Client → Server | Send chat message | `{ message, userId, meetingId, timestamp }` |
+| `receive-message` | Server → Clients | Broadcast message | `{ message, userId, username, timestamp }` |
+
+#### **Screen Sharing Events**
+| Event | Direction | Description | Payload |
+|-------|-----------|-------------|---------|
+| `screen-share-started` | Client → Server | User started screen sharing | `{ userId, meetingId }` |
+| `screen-share-stopped` | Client → Server | User stopped screen sharing | `{ userId, meetingId }` |
+| `screen-share-update` | Server → Clients | Notify screen share status | `{ userId, isSharing }` |
+
+### 🔐 Authentication Flow
+```
+1. User Registration/Login → JWT Token Generated
+2. Token stored in localStorage
+3. Token sent with API requests for authentication
+4. Socket connection includes token for user identification
+```
 
 ## 🌐 Deployment
 
-### Backend Deployment
-The application can be deployed on platforms like:
-- **Heroku**
-- **Railway**
-- **Render**
-- **DigitalOcean**
+### 🚀 Live Application
+- **Frontend**: [Your Frontend URL]
+- **Backend**: [Your Backend URL]
+- **Documentation**: [Frontend URL]/documentation.html
 
-### Frontend Deployment
-- **Netlify**
-- **Vercel**
-- **GitHub Pages**
+### 📋 Deployment Platforms
+
+#### **Backend Deployment Options**
+| Platform | Free Tier | Auto Deploy | Database | Recommended |
+|----------|-----------|-------------|----------|-------------|
+| **Render** | ✅ 750 hours/month | ✅ GitHub integration | ✅ MongoDB Atlas | ⭐ **Recommended** |
+| **Railway** | ✅ $5 credit/month | ✅ GitHub integration | ✅ Built-in databases | ⭐ Good option |
+| **Heroku** | ❌ No free tier | ✅ GitHub integration | ✅ Add-ons available | 💰 Paid only |
+
+#### **Frontend Deployment Options**
+| Platform | Free Tier | Custom Domain | CDN | Recommended |
+|----------|-----------|---------------|-----|-------------|
+| **Vercel** | ✅ Unlimited | ✅ Free custom domains | ✅ Global CDN | ⭐ **Recommended** |
+| **Netlify** | ✅ 100GB/month | ✅ Free custom domains | ✅ Global CDN | ⭐ Great option |
+| **Render** | ✅ Static sites | ✅ Custom domains | ✅ Global CDN | ⭐ Good option |
+
+### ⚙️ Environment Configuration
+
+#### **Backend Environment Variables (.env)**
+```env
+# Server Configuration
+NODE_ENV=production
+PORT=8000
+
+# Database
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
+
+# Frontend URL (for CORS)
+FRONTEND_URL=https://your-frontend-domain.com
+```
+
+#### **Frontend Environment Detection**
+The application automatically detects the environment:
+```javascript
+// frontend/src/environment.js
+const IS_PROD = process.env.NODE_ENV === 'production' || 
+                window.location.hostname !== 'localhost';
+
+const server = IS_PROD ?
+    "https://your-backend-url.com" :    // Production backend
+    "http://localhost:8000"             // Local development
+```
+
+### 🔧 Deployment Steps
+
+#### **Option 1: Render (Both Frontend & Backend)**
+
+**Backend Deployment:**
+1. Create account on [render.com](https://render.com)
+2. Connect GitHub repository
+3. Create "Web Service"
+4. Configure:
+   - **Environment**: Node
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Root Directory**: `backend`
+5. Add environment variables
+6. Deploy
+
+**Frontend Deployment:**
+1. Create "Static Site" on Render
+2. Configure:
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `build`
+   - **Root Directory**: `frontend`
+3. Deploy
+
+#### **Option 2: Vercel (Frontend) + Render (Backend)**
+
+**Backend:** Follow Render steps above
+
+**Frontend:**
+1. Install Vercel CLI: `npm i -g vercel`
+2. In frontend directory: `vercel`
+3. Follow prompts and deploy
+
+### 📊 Performance Optimizations
+
+- **Frontend**: Build optimization with React's production build
+- **Backend**: Express.js with compression middleware
+- **Database**: MongoDB indexes for faster queries
+- **CDN**: Static assets served via global CDN
+- **WebRTC**: Direct peer-to-peer connections for video/audio
 
 ## 🔒 Security Features
 
