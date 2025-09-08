@@ -1581,28 +1581,72 @@
 
         <div class="section">
             <h2>🏗️ System Architecture</h2>
-            <div class="architecture">VedioConferencing/
-├── backend/                    # Server-side application
-│   ├── src/
-│   │   ├── app.js             # Main Express server
-│   │   ├── initializeDb.js    # Database initialization
-│   │   ├── controllers/       # Business logic layer
-│   │   │   ├── socketManager.js    # Socket.io event handling
-│   │   │   └── user.controller.js  # User management logic
-│   │   ├── models/            # Database schemas
-│   │   │   ├── meeting.model.js    # Meeting data model
-│   │   │   └── user.model.js       # User data model
-│   │   └── routes/            # API endpoints
-│   │       └── users.routes.js     # User API routes
-└── frontend/                   # Client-side application
-    ├── src/
-    │   ├── App.js             # Main React component
-    │   ├── pages/             # React components/pages
-    │   │   ├── authentication.jsx  # Login/Register page
-    │   │   ├── VideoMeet.jsx       # Video meeting interface
-    │   │   └── home.jsx            # Dashboard
-    │   ├── contexts/          # State management
-    │   └── utils/             # Helper functions</div>
+            <div class="architecture">Vedio_Conferencing/
+├── 📁 backend/                          # Backend server
+│   ├── 📁 src/
+│   │   ├── 📄 app.js                    # Main Express server setup
+│   │   ├── 📄 initializeDb.js           # Database initialization
+│   │   ├── 📁 controllers/
+│   │   │   ├── 📄 socketManager.js      # Socket.IO event handling & WebRTC signaling
+│   │   │   └── 📄 user.controller.js    # User authentication & management
+│   │   ├── 📁 models/
+│   │   │   ├── 📄 meeting.model.js      # Meeting data schema
+│   │   │   └── 📄 user.model.js         # User data schema
+│   │   └── 📁 routes/
+│   │       └── 📄 users.routes.js       # User API endpoints
+│   ├── 📄 .env                          # Environment variables (local)
+│   ├── 📄 .env.example                  # Environment template
+│   ├── 📄 .gitignore                    # Git ignore rules
+│   ├── 📄 package.json                  # Backend dependencies
+│   └── 📄 package-lock.json             # Dependency lock file
+│
+├── 📁 frontend/                         # React frontend application
+│   ├── 📁 public/
+│   │   ├── 📄 index.html                # Main HTML template
+│   │   ├── 📄 documentation.html        # Project documentation page
+│   │   ├── 📄 _redirects                # Routing configuration for deployment
+│   │   ├── 🖼️ background.png            # Landing page background
+│   │   ├── 🖼️ logo192.png              # App logo (192x192)
+│   │   ├── 🖼️ logo512.png              # App logo (512x512)
+│   │   ├── 🖼️ logo3.png                # Additional logo variant
+│   │   ├── 🖼️ mobile.png               # Mobile app icon
+│   │   ├── 📄 manifest.json             # PWA manifest
+│   │   ├── 📄 robots.txt                # SEO robots file
+│   │   └── 🖼️ favicon.ico              # Browser tab icon
+│   ├── 📁 src/
+│   │   ├── 📄 App.js                    # Main React component
+│   │   ├── 📄 App.css                   # Global application styles
+│   │   ├── 📄 index.js                  # React DOM render entry point
+│   │   ├── 📄 index.css                 # Global CSS styles
+│   │   ├── 📄 environment.js            # Environment configuration & API URLs
+│   │   ├── 📁 contexts/
+│   │   │   ├── 📄 AuthContext.jsx       # Authentication state management
+│   │   │   └── 📄 backend.code-workspace # VS Code workspace config
+│   │   ├── 📁 pages/
+│   │   │   ├── 📄 authentication.jsx    # Login/Register page
+│   │   │   ├── 📄 auth.css              # Authentication page styles
+│   │   │   ├── 📄 history.jsx           # Meeting history page
+│   │   │   ├── 📄 home.jsx              # User dashboard/home page
+│   │   │   ├── 📄 landing.jsx           # Landing page with hero section
+│   │   │   ├── 📄 VideoMeet.jsx         # Main video meeting interface
+│   │   │   └── 📄 VideoMeet_new.jsx     # Alternative video meeting component
+│   │   ├── 📁 styles/
+│   │   │   └── 📄 videoComponent.module.css # Video component specific styles
+│   │   ├── 📁 utils/
+│   │   │   └── 📄 withAuth.jsx          # Higher-order component for authentication
+│   │   ├── 📄 logo.svg                  # React logo
+│   │   ├── 📄 reportWebVitals.js        # Performance monitoring
+│   │   ├── 📄 setupTests.js             # Test configuration
+│   │   └── 📄 App.test.js               # App component tests
+│   ├── 📄 .gitignore                    # Frontend Git ignore rules
+│   ├── 📄 README.md                     # Frontend specific documentation
+│   ├── 📄 package.json                  # Frontend dependencies & scripts
+│   └── 📄 package-lock.json             # Frontend dependency lock file
+│
+├── 📄 .gitignore                        # Root level Git ignore
+├── 📄 README.md                         # Main project documentation (this file)
+├── 📄 FLOATING_VIDEO_FEATURE.md         # Floating video feature documentation
+└── 📄 SCREEN_SHARING_FEATURES.md        # Screen sharing feature documentation</div>
         </div>
 
         <div class="section">
