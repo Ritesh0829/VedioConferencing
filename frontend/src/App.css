@@ -54,6 +54,43 @@
   font-size: 1.7rem;
 }
 
+/* Landing Page Button Styles */
+.landing-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.9rem;
+  flex-wrap: wrap;
+}
+
+.landing-buttons div[role='button'] {
+  background: #D97500;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.landing-buttons .doc-button {
+  background: #4CAF50;
+}
+
+.landing-buttons .doc-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.landing-buttons div[role='button']:hover {
+  background: #b86200;
+  transform: translateY(-2px);
+}
+
+.landing-buttons .doc-button span {
+  color: white;
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
 .landingMainContainer>div:nth-child(2) img {
   height: 70vh;
   width: auto;
@@ -133,6 +170,23 @@
   }
   
   .landingMainContainer>div:nth-child(1) div[role='button'] a {
+    font-size: 1.2rem;
+  }
+  
+  .landing-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  
+  .landing-buttons div[role='button'] {
+    padding: 0.8rem 1.5rem;
+    width: auto;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .landing-buttons .doc-button span {
     font-size: 1.2rem;
   }
   

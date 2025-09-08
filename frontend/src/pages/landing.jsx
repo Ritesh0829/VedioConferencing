@@ -14,6 +14,9 @@ export default function LandingPage() {
                 </div>
                 <div className='navlist'>
                     <p onClick={() => {
+                        window.open('/documentation.html', '_blank')
+                    }}>Documentation</p>
+                    <p onClick={() => {
                         router("/aljk23")
                     }}>Join as Guest</p>
                     <p onClick={() => {
@@ -35,8 +38,15 @@ export default function LandingPage() {
                     <h1><span style={{ color: "#FF9839" }}>Connect</span> with your loved Ones</h1>
 
                     <p>Cover a distance by BoSS Video Call</p>
-                    <div role='button'>
-                        <Link to={"/auth"}>Get Started</Link>
+                    <div className="landing-buttons">
+                        <div role='button'>
+                            <Link to={"/auth"}>Get Started</Link>
+                        </div>
+                        <div role='button' className="doc-button" onClick={() => {
+                            window.open('/documentation.html', '_blank')
+                        }}>
+                            <span>📖 View Documentation</span>
+                        </div>
                     </div>
                 </div>
                 <div>
