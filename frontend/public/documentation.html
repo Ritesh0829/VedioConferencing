@@ -118,6 +118,14 @@
             50% { transform: translateY(-10px); }
         }
         
+        /* Disable floating animation on mobile devices for stability */
+        @media (max-width: 768px) {
+            .container {
+                animation: none !important;
+                transform: none !important;
+            }
+        }
+        
         /* Popup Modal Styles */
         .popup-overlay {
             position: fixed;
